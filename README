@@ -1,0 +1,8 @@
+Import: 
+
+> import rho.com.file.quickFunc._
+
+Here's the function signatures:
+
+readIntoString(file,encoding): String
+countLines(file,encoding): Int
