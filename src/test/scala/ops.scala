@@ -36,5 +36,25 @@ class FileOps extends FunSuite {
       assert(countLines(path_x)===0)
     }
   }
+
+  test("Extract path from file") {
+    assert(getPath("/home/user/documents/file")==="/home/user/documents/")
+    assert(getPath("file")===".")
+    assert(getPath("downloads/porn/hardcore/mysextape.mov")==="downloads/porn/hardcore/")
+  }
+
+  test("Making a directory (data/)") {
+    makeDirectory("data/")
+    assert(true===new java.io.File("data/").exists)
+  }
+
+  test("Writting to file") {
+    writeToFile("data/one","uno")
+    assert(readIntoString("data/one")==="uno")
+    writeToFile("data/one","dos",true)
+    assert(readIntoString("data/one")==="uno\ndos")
+    writeToFile("data/one","tres cuatro",true)
+    assert(readIntoString("data/one")==="uno\ndos\ntres cuatro")
+  }
  
 }

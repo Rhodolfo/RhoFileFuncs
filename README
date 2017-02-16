@@ -6,3 +6,5 @@ Here's the function signatures:
 
 readIntoString(file,encoding): String
 countLines(file,encoding): Int
+makeDirectory(directory): Int
+writeToFile(file,string,append=false): Int // creates directory structure needed to house file
