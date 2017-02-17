@@ -8,7 +8,7 @@ class FileOps extends FunSuite {
 
   // Test vars
   trait testVars {
-    val path = "src/test/resources/"
+    val path = "filefuncs/src/test/resources/"
     val path_0 = path + "empty"
     val path_1 = path + "one"
     val path_2 = path + "two"
@@ -50,7 +50,7 @@ class FileOps extends FunSuite {
     assert(true===new java.io.File("data/").exists)
   }
 
-  test("Writing to file") {
+  test("Writing to file (inside data/)") {
     writeToFile("data/one","uno")
     assert(readIntoString("data/one")==="uno")
     writeToFile("data/one","dos",true)
