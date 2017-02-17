@@ -1,10 +1,5 @@
-Import: 
+filefuncs: Collection of simple functions for file handling.
+checkpoints: Class for handling a simple checkpoint system, useful for long runs.
 
-> import rho.com.file.quickFunc._
-
-Here's the function signatures:
-
-readIntoString(file,encoding): String
-countLines(file,encoding): Int
-makeDirectory(directory): Int
-writeToFile(file,string,append=false): Int // creates directory structure needed to house file
+TO DO:
+- These libraries are pretty simple, but still need documenting.

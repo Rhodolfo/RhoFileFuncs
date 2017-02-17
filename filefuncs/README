@@ -1,0 +1,17 @@
+Import: 
+
+import rho.com.file.quickFunc.$WHATEVER
+
+Function Signatures:
+
+readIntoString(file: String,encoding: String = "some default"): String
+  Reads a file into a string
+readIntoList(file: String,encoding: String = "Some default"): List[String]
+  Reads a file into a list of strings (line->list entry)
+countLines(file: String,encoding: String = "Some default"): Int
+  Counts lines in a file
+makeDirectory(directory: String): Int
+  Makes a directory
+writeToFile(file: String,string: String,append: Boolean = false): Int 
+ If append is true, then add string after \n
+ otherwise overwrite or create new file

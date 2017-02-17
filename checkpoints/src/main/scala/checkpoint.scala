@@ -2,10 +2,9 @@ package com.rho.file
 import com.rho.file.quickFunc.{readIntoList,writeToFile}
 import java.io.File
 
-class RhoCheck(path: String = "data", file: String = "run.chk") {
+class RhoCheck(checkfile: String = "data/run.chk") {
 
   // List of events
-  val checkfile = path + "/" + file
   val events = readIntoList(checkfile)
 
   // File checks if event has passed

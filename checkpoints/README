@@ -1,0 +1,25 @@
+Import:
+
+import com.rho.file.RhoCheck
+
+Function Signature:
+
+RhoCheck(checkfile: String): RhoCheck
+  Constructor, specifies the checkpoint file to initialize with.
+  Creates file if does not exist.
+
+Attributes:
+
+val events: List[String]
+  Contains all lines in checkfile as a list
+
+val checkfile: String
+  Checkpoint file
+
+Methods:
+
+checkEvent(event: String): Boolean
+  true if event is a line in checkfile, false otherwise.
+
+recordEvent(event: String): Int
+  Writes event as a new line in checkfile, returns 1 if succesful
