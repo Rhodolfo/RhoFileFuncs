@@ -21,8 +21,10 @@ class FileOps extends FunSuite {
     new testVars {
       val one = ("\\w{1,}".r findFirstIn readIntoString(path_1)).mkString
       val three = ("\\s".r replaceAllIn(readIntoString(path_3),"")).mkString
+      val list = readIntoList(path_3)
       assert(one==="one")
       assert(three==="onetwothree")
+      assert(List("one","two","three")===list)
     }
   }
 
@@ -48,7 +50,7 @@ class FileOps extends FunSuite {
     assert(true===new java.io.File("data/").exists)
   }
 
-  test("Writting to file") {
+  test("Writing to file") {
     writeToFile("data/one","uno")
     assert(readIntoString("data/one")==="uno")
     writeToFile("data/one","dos",true)

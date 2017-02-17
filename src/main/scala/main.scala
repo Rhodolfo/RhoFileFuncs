@@ -20,6 +20,20 @@ import java.io._
     write()
   }
 
+  // Put contents of a file in a string
+  def readIntoList(file: String, encoding: String ="ISO-8859-1"): List[String] = {
+    val exists = (new File(file)).exists
+    def write(): List[String] = {
+      if (exists) {
+        val source = scala.io.Source.fromFile(file,encoding)
+        val result = try source.getLines.toList finally source.close()
+        result
+      } else List()
+    }
+    write()
+  }
+
+
   // Count lines of a file
   def countLines(file: String, encoding: String = "ISO-8859-1"): Int = {
     val exists = (new File(file)).exists
