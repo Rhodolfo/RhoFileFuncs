@@ -64,14 +64,23 @@ import java.io._
   }
 
   // Dumps string into file
-  def writeToFile(file: String = "",string: String,append: Boolean = false): Int = {
-    import java.io.{FileWriter,BufferedWriter}
+  def writeToFile(file: String = "",string: String, append: Boolean = false, encoding: String = "ISO-8859-1"): Int = {
+    import java.io.{BufferedWriter,FileOutputStream,OutputStreamWriter}
     if (!append) {makeDirectory(getPath(file))}
-    val writer = new BufferedWriter(new FileWriter(file,append))
+    val stream = new OutputStreamWriter(new FileOutputStream(file,append),encoding)
+    val writer = new BufferedWriter(stream)
     if (append) writer.write("\n"+string) 
     else writer.write(string)
     writer.close()
     1
   }
+
+  // Dumps list into file, each list entry as a line
+  def writeListToFile(file: String = "", list: List[String], append: Boolean = false, encoding: String = "ISO-8859-1"): Int = {
+    def concat(a: String, b: String): String = if (a.isEmpty) b else a + "\n" + b
+    writeToFile(file,list.foldLeft[String]("")(concat),append,encoding)
+  }
+
+
 
 }

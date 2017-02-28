@@ -58,5 +58,11 @@ class FileOps extends FunSuite {
     writeToFile("data/one","tres cuatro",true)
     assert(readIntoString("data/one")==="uno\ndos\ntres cuatro")
   }
+
+  test("Saving a list (inside data/)") {
+    writeListToFile("data/list",List("uno","dos","tres"))
+    assert(readIntoList("data/list")===List("uno","dos","tres"))
+  }
+
  
 }
